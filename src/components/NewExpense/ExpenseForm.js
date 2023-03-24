@@ -4,6 +4,7 @@ import './ExpenseForm.css';
 const ExpenseForm = () => {
   console.log('ExpenseForm.js');
 
+  // case1) 이전 state를 의존하지 않을 때
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
@@ -19,6 +20,31 @@ const ExpenseForm = () => {
   const dateChangeHandler = event => {
     setEnteredDate(event.target.value);
   };
+
+  // // case2) 이전 state를 의존할 때
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: ''
+  // });
+
+  // const titleChangeHandler = event => {
+  //   setUserInput(prevState => {
+  //     return { ...prevState, enteredTitle: event.target.value };
+  //   });
+  // };
+
+  // const amountChangeHandler = event => {
+  //   setUserInput(prevState => {
+  //     return { ...prevState, enteredAmount: event.target.value };
+  //   });
+  // };
+
+  // const dateChangeHandler = event => {
+  //   setUserInput(prevState => {
+  //     return { ...prevState, enteredDate: event.target.value };
+  //   });
+  // };
 
   return (
     <form>
